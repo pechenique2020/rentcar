@@ -14,6 +14,7 @@
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/spi/ports/DomainPriceItemsRepositoryPort.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/model/DomainRentCarOrderModel.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/model/DomainPricesModel.java
+/Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/model/DomainRentCarOrderDetailModel.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/spi/ports/DomainRentCarOrderClientRepositoryPort.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/model/DomainClientBonusModel.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/domain/src/main/java/com/caixa/rentcar/domain/spi/ports/DomainPricesRepositoryPort.java

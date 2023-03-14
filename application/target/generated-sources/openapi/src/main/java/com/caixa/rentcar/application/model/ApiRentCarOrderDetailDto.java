@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * ApiRentCarOrderDetailDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-13T09:45:32.834281+01:00[Europe/Madrid]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-14T07:50:01.475022+01:00[Europe/Madrid]")
 public class ApiRentCarOrderDetailDto   {
   @JsonProperty("id")
   private Long id;
@@ -37,6 +37,12 @@ public class ApiRentCarOrderDetailDto   {
 
   @JsonProperty("return_date")
   private String returnDate;
+
+  @JsonProperty("price")
+  private Long price;
+
+  @JsonProperty("status")
+  private String status;
 
   public ApiRentCarOrderDetailDto id(Long id) {
     this.id = id;
@@ -198,6 +204,46 @@ public class ApiRentCarOrderDetailDto   {
     this.returnDate = returnDate;
   }
 
+  public ApiRentCarOrderDetailDto price(Long price) {
+    this.price = price;
+    return this;
+  }
+
+  /**
+   * Get price
+   * @return price
+  */
+  @ApiModelProperty(value = "")
+
+
+  public Long getPrice() {
+    return price;
+  }
+
+  public void setPrice(Long price) {
+    this.price = price;
+  }
+
+  public ApiRentCarOrderDetailDto status(String status) {
+    this.status = status;
+    return this;
+  }
+
+  /**
+   * Get status
+   * @return status
+  */
+  @ApiModelProperty(value = "")
+
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -215,12 +261,14 @@ public class ApiRentCarOrderDetailDto   {
         Objects.equals(this.carDetail, apiRentCarOrderDetail.carDetail) &&
         Objects.equals(this.startDate, apiRentCarOrderDetail.startDate) &&
         Objects.equals(this.endDate, apiRentCarOrderDetail.endDate) &&
-        Objects.equals(this.returnDate, apiRentCarOrderDetail.returnDate);
+        Objects.equals(this.returnDate, apiRentCarOrderDetail.returnDate) &&
+        Objects.equals(this.price, apiRentCarOrderDetail.price) &&
+        Objects.equals(this.status, apiRentCarOrderDetail.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, clientDni, clientFullname, carPlate, carDetail, startDate, endDate, returnDate);
+    return Objects.hash(id, clientDni, clientFullname, carPlate, carDetail, startDate, endDate, returnDate, price, status);
   }
 
   @Override
@@ -236,6 +284,8 @@ public class ApiRentCarOrderDetailDto   {
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    returnDate: ").append(toIndentedString(returnDate)).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

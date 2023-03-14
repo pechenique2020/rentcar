@@ -343,6 +343,11 @@ components:
           type: string
         return_date:
           type: string
+        price:
+          type: integer
+          format: int64
+        status:
+          type: string
     ApiCarInfo:
       type: object
       properties:

@@ -1,14 +1,11 @@
 package com.caixa.rentcar.domain.api.ports;
 
-import com.caixa.rentcar.domain.model.DomainApiResponseModel;
-import com.caixa.rentcar.domain.model.DomainClientModel;
-import com.caixa.rentcar.domain.model.DomainRentCarOrderClientModel;
+import com.caixa.rentcar.domain.model.*;
 import com.caixa.rentcar.domain.shared.constants.DomainMessages;
 import com.caixa.rentcar.domain.shared.exceptions.DomainNotFoundException;
 import com.caixa.rentcar.domain.spi.ports.DomainClientBonusRepositoryPort;
 import com.caixa.rentcar.domain.spi.ports.DomainClientRepositoryPort;
 import com.caixa.rentcar.domain.spi.ports.DomainRentCarOrderClientRepositoryPort;
-import com.caixa.rentcar.domain.spi.ports.DomainRentCarOrderRepositoryPort;
 import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
@@ -26,8 +23,8 @@ public class DomainClientServicePortImpl implements DomainClientServicePort {
     public DomainClientModel findClientByDni(String clientDni){
         DomainClientModel domainClientModel = domainClientRepositoryPort.findClientByDni(clientDni);
         if (domainClientModel!=null){
-            //int loyalty = domainClientBonusRepositoryPort.findClientBonus(clientDni);
-            domainClientModel.setLoyalty(0);
+            List<DomainClientBonusModel> clientBonus = domainClientBonusRepositoryPort.findClientBonus(clientDni);
+            domainClientModel.setLoyalty(sumPoints(clientBonus));
             List<DomainRentCarOrderClientModel> domainRentCarOrderClientModelList = domainRentCarOrderClientRepositoryPort.findRentCarOrderByClientDni(clientDni);
             domainClientModel.setOrderHistory(!domainRentCarOrderClientModelList.isEmpty() ? domainRentCarOrderClientModelList : new ArrayList<>());
             return domainClientModel;
@@ -45,5 +42,12 @@ public class DomainClientServicePortImpl implements DomainClientServicePort {
         }else{
             throw new DomainNotFoundException(DomainMessages.CLIENT_ALREADY_EXISTS);
         }
+    }
+
+    private int sumPoints(List<DomainClientBonusModel> clientBonus){
+        return clientBonus.stream()
+                .map(c -> c.getPoints())
+                .mapToInt(i -> i)
+                .sum();
     }
 }

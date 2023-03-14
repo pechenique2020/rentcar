@@ -4,12 +4,14 @@ com/caixa/rentcar/infrastructure/h2/mapper/PriceItemsDboMapper.class
 com/caixa/rentcar/infrastructure/h2/adapter/PriceItemsH2Adapter.class
 com/caixa/rentcar/infrastructure/h2/repository/InfraCarRepository.class
 com/caixa/rentcar/infrastructure/h2/entity/PriceItemsEntity.class
+com/caixa/rentcar/infrastructure/h2/entity/ClientLoyaltyEntity.class
 com/caixa/rentcar/infrastructure/h2/repository/InfraRentCarOrderRepository.class
 com/caixa/rentcar/infrastructure/h2/entity/PricesEntity.class
 com/caixa/rentcar/infrastructure/h2/repository/InfraRentCarOrderClientRepository.class
 com/caixa/rentcar/infrastructure/h2/mapper/ClientBonusDboMapperImpl.class
 com/caixa/rentcar/infrastructure/h2/mapper/RentCarOrderDboMapperImpl.class
 com/caixa/rentcar/infrastructure/h2/mapper/PriceItemsDboMapperImpl.class
+com/caixa/rentcar/infrastructure/h2/repository/InfraClientLoyaltyRepository.class
 com/caixa/rentcar/infrastructure/h2/entity/RentCarOrderClientEntity.class
 com/caixa/rentcar/infrastructure/h2/repository/InfraPriceItemsRepository.class
 com/caixa/rentcar/infrastructure/h2/mapper/RentCarOrderDboMapper.class

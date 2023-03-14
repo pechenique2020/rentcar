@@ -1,15 +1,15 @@
 package com.caixa.rentcar.infrastructure.h2.adapter;
 
 import com.caixa.rentcar.domain.model.DomainClientBonusModel;
-import com.caixa.rentcar.domain.model.DomainClientModel;
 import com.caixa.rentcar.domain.spi.ports.DomainClientBonusRepositoryPort;
 import com.caixa.rentcar.infrastructure.h2.mapper.ClientBonusDboMapper;
-import com.caixa.rentcar.infrastructure.h2.mapper.ClientDboMapper;
 import com.caixa.rentcar.infrastructure.h2.repository.InfraClientBonusRepository;
-import com.caixa.rentcar.infrastructure.h2.repository.InfraClientRepository;
+import com.caixa.rentcar.infrastructure.h2.repository.InfraClientLoyaltyRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 public class ClientBonusH2Adapter implements DomainClientBonusRepositoryPort {
     
     InfraClientBonusRepository clientBonusRepository;
+    InfraClientLoyaltyRepository clientLoyaltyRepository;
     ClientBonusDboMapper clientBonusMapper;
 
     @Override
@@ -27,9 +28,9 @@ public class ClientBonusH2Adapter implements DomainClientBonusRepositoryPort {
     }
 
     @Override
-    public int findClientBonus(String clientDni) {
+    public List<DomainClientBonusModel> findClientBonus(String clientDni) {
         log.debug("findClientBonus()");
-        return clientBonusRepository.findClientBonus(clientDni);
+        return clientBonusMapper.toDomainList(clientLoyaltyRepository.findClientBonus(clientDni));
     }
 
 }

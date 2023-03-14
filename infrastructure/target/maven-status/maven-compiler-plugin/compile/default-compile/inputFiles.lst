@@ -1,3 +1,4 @@
+/Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/repository/InfraClientLoyaltyRepository.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/mapper/PriceItemsDboMapper.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/entity/CarEntity.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/mapper/PricesDboMapper.java
@@ -7,6 +8,7 @@
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/entity/ClientEntity.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/mapper/RentCarOrderClientDboMapper.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/repository/InfraRentCarOrderRepository.java
+/Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/entity/ClientLoyaltyEntity.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/mapper/ClientDboMapper.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/repository/InfraClientRepository.java
 /Users/pechenique/Desarrollo/SpringBoot/test/rentcar/infrastructure/src/main/java/com/caixa/rentcar/infrastructure/h2/adapter/ClientH2Adapter.java

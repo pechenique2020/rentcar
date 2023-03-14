@@ -1,7 +1,7 @@
 package com.caixa.rentcar.infrastructure.h2.mapper;
 
-import com.caixa.rentcar.domain.model.DomainRentCarOrderClientModel;
-import com.caixa.rentcar.domain.model.DomainRentCarOrderClientModel.DomainRentCarOrderClientModelBuilder;
+import com.caixa.rentcar.domain.model.DomainRentCarOrderDetailModel;
+import com.caixa.rentcar.domain.model.DomainRentCarOrderDetailModel.DomainRentCarOrderDetailModelBuilder;
 import com.caixa.rentcar.domain.model.DomainRentCarOrderModel;
 import com.caixa.rentcar.domain.model.DomainRentCarOrderModel.DomainRentCarOrderModelBuilder;
 import com.caixa.rentcar.infrastructure.h2.entity.RentCarOrderEntity;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-13T09:45:35+0100",
+    date = "2023-03-14T07:50:05+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 @Component
@@ -47,23 +47,24 @@ public class RentCarOrderDboMapperImpl implements RentCarOrderDboMapper {
     }
 
     @Override
-    public DomainRentCarOrderClientModel toDomainInfo(RentCarOrderEntity entity) {
+    public DomainRentCarOrderDetailModel toDomainInfo(RentCarOrderEntity entity) {
         if ( entity == null ) {
             return null;
         }
 
-        DomainRentCarOrderClientModelBuilder domainRentCarOrderClientModel = DomainRentCarOrderClientModel.builder();
+        DomainRentCarOrderDetailModelBuilder domainRentCarOrderDetailModel = DomainRentCarOrderDetailModel.builder();
 
-        domainRentCarOrderClientModel.id( entity.getId() );
-        domainRentCarOrderClientModel.carPlate( entity.getCarPlate() );
-        domainRentCarOrderClientModel.startDate( entity.getStartDate() );
-        domainRentCarOrderClientModel.endDate( entity.getEndDate() );
-        domainRentCarOrderClientModel.returnDate( entity.getReturnDate() );
-        domainRentCarOrderClientModel.price( entity.getPrice() );
-        domainRentCarOrderClientModel.status( entity.getStatus() );
-        domainRentCarOrderClientModel.createdOn( entity.getCreatedOn() );
+        domainRentCarOrderDetailModel.id( entity.getId() );
+        domainRentCarOrderDetailModel.clientDni( entity.getClientDni() );
+        domainRentCarOrderDetailModel.carPlate( entity.getCarPlate() );
+        domainRentCarOrderDetailModel.startDate( entity.getStartDate() );
+        domainRentCarOrderDetailModel.endDate( entity.getEndDate() );
+        domainRentCarOrderDetailModel.returnDate( entity.getReturnDate() );
+        domainRentCarOrderDetailModel.price( entity.getPrice() );
+        domainRentCarOrderDetailModel.status( entity.getStatus() );
+        domainRentCarOrderDetailModel.createdOn( entity.getCreatedOn() );
 
-        return domainRentCarOrderClientModel.build();
+        return domainRentCarOrderDetailModel.build();
     }
 
     @Override

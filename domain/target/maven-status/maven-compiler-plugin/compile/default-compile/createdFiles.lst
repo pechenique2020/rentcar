@@ -13,6 +13,7 @@ com/caixa/rentcar/domain/spi/ports/DomainClientRepositoryPort.class
 com/caixa/rentcar/domain/spi/ports/DomainCarRepositoryPort.class
 com/caixa/rentcar/domain/model/DomainPriceItemsModel.class
 com/caixa/rentcar/domain/api/ports/DomainClientServicePort.class
+com/caixa/rentcar/domain/model/DomainRentCarOrderDetailModel.class
 com/caixa/rentcar/domain/model/DomainRentCarOrderClientModel.class
 com/caixa/rentcar/domain/model/DomainClientBonusModel.class
 com/caixa/rentcar/domain/model/DomainPriceItemsModel$DomainPriceItemsModelBuilder.class
@@ -21,6 +22,7 @@ com/caixa/rentcar/domain/model/DomainPricesModel$DomainPricesModelBuilder.class
 com/caixa/rentcar/domain/shared/constants/DomainMessages.class
 com/caixa/rentcar/domain/spi/ports/DomainPriceItemsRepositoryPort.class
 com/caixa/rentcar/domain/spi/ports/DomainRentCarOrderRepositoryPort.class
+com/caixa/rentcar/domain/model/DomainRentCarOrderDetailModel$DomainRentCarOrderDetailModelBuilder.class
 com/caixa/rentcar/domain/api/ports/DomainCarServicePortImpl.class
 com/caixa/rentcar/domain/model/DomainClientModel$DomainClientModelBuilder.class
 com/caixa/rentcar/domain/model/DomainPricesModel.class

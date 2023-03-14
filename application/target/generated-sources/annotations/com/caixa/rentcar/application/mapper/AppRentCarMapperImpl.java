@@ -6,6 +6,7 @@ import com.caixa.rentcar.application.model.ApiRentCarOrderResponseDto;
 import com.caixa.rentcar.application.model.ApiResponseDto;
 import com.caixa.rentcar.domain.model.DomainApiResponseModel;
 import com.caixa.rentcar.domain.model.DomainRentCarOrderClientModel;
+import com.caixa.rentcar.domain.model.DomainRentCarOrderDetailModel;
 import com.caixa.rentcar.domain.model.DomainRentCarOrderModel;
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -21,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-13T09:45:34+0100",
+    date = "2023-03-14T07:50:02+0100",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.6 (Eclipse Adoptium)"
 )
 @Component
@@ -104,30 +105,40 @@ public class AppRentCarMapperImpl implements AppRentCarMapper {
         catch ( ParseException e ) {
             throw new RuntimeException( e );
         }
+        if ( apiRentCarOrderInfoDto.getPrice() != null ) {
+            domainRentCarOrderClientModel.price( apiRentCarOrderInfoDto.getPrice().doubleValue() );
+        }
+        domainRentCarOrderClientModel.status( apiRentCarOrderInfoDto.getStatus() );
 
         return domainRentCarOrderClientModel.build();
     }
 
     @Override
-    public ApiRentCarOrderDetailDto toRentCarOrderInfoDto(DomainRentCarOrderClientModel domainRentCarOrderInfoModel) {
-        if ( domainRentCarOrderInfoModel == null ) {
+    public ApiRentCarOrderDetailDto toRentCarOrderInfoDto(DomainRentCarOrderDetailModel domainRentCarOrderDetailModel) {
+        if ( domainRentCarOrderDetailModel == null ) {
             return null;
         }
 
         ApiRentCarOrderDetailDto apiRentCarOrderDetailDto = new ApiRentCarOrderDetailDto();
 
-        if ( domainRentCarOrderInfoModel.getStartDate() != null ) {
-            apiRentCarOrderDetailDto.setStartDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderInfoModel.getStartDate() ) );
+        if ( domainRentCarOrderDetailModel.getStartDate() != null ) {
+            apiRentCarOrderDetailDto.setStartDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderDetailModel.getStartDate() ) );
         }
-        if ( domainRentCarOrderInfoModel.getEndDate() != null ) {
-            apiRentCarOrderDetailDto.setEndDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderInfoModel.getEndDate() ) );
+        if ( domainRentCarOrderDetailModel.getEndDate() != null ) {
+            apiRentCarOrderDetailDto.setEndDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderDetailModel.getEndDate() ) );
         }
-        if ( domainRentCarOrderInfoModel.getReturnDate() != null ) {
-            apiRentCarOrderDetailDto.setReturnDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderInfoModel.getReturnDate() ) );
+        if ( domainRentCarOrderDetailModel.getReturnDate() != null ) {
+            apiRentCarOrderDetailDto.setReturnDate( new SimpleDateFormat( "yyyy-MM-dd" ).format( domainRentCarOrderDetailModel.getReturnDate() ) );
         }
-        apiRentCarOrderDetailDto.setId( domainRentCarOrderInfoModel.getId() );
-        apiRentCarOrderDetailDto.setCarPlate( domainRentCarOrderInfoModel.getCarPlate() );
-        apiRentCarOrderDetailDto.setCarDetail( domainRentCarOrderInfoModel.getCarDetail() );
+        apiRentCarOrderDetailDto.setId( domainRentCarOrderDetailModel.getId() );
+        apiRentCarOrderDetailDto.setClientDni( domainRentCarOrderDetailModel.getClientDni() );
+        apiRentCarOrderDetailDto.setClientFullname( domainRentCarOrderDetailModel.getClientFullname() );
+        apiRentCarOrderDetailDto.setCarPlate( domainRentCarOrderDetailModel.getCarPlate() );
+        apiRentCarOrderDetailDto.setCarDetail( domainRentCarOrderDetailModel.getCarDetail() );
+        if ( domainRentCarOrderDetailModel.getPrice() != null ) {
+            apiRentCarOrderDetailDto.setPrice( domainRentCarOrderDetailModel.getPrice().longValue() );
+        }
+        apiRentCarOrderDetailDto.setStatus( domainRentCarOrderDetailModel.getStatus() );
 
         return apiRentCarOrderDetailDto;
     }

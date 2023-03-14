@@ -1,11 +1,13 @@
 package com.caixa.rentcar.domain.spi.ports;
 
 import com.caixa.rentcar.domain.model.DomainClientBonusModel;
-import com.caixa.rentcar.domain.model.DomainClientModel;
+
+import java.util.List;
+
 
 public interface DomainClientBonusRepositoryPort {
     void addBonus(DomainClientBonusModel domainClientBonusModel);
 
-    int findClientBonus(String clientDni);
+    List<DomainClientBonusModel> findClientBonus(String clientDni);
 
 }

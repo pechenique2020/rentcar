@@ -1,6 +1,7 @@
 package com.caixa.rentcar.infrastructure.h2.adapter;
 
 import com.caixa.rentcar.domain.model.DomainRentCarOrderClientModel;
+import com.caixa.rentcar.domain.model.DomainRentCarOrderDetailModel;
 import com.caixa.rentcar.domain.model.DomainRentCarOrderModel;
 import com.caixa.rentcar.domain.spi.ports.DomainRentCarOrderRepositoryPort;
 import com.caixa.rentcar.infrastructure.h2.mapper.RentCarOrderDboMapper;
@@ -25,7 +26,7 @@ public class RentCarOrderH2Adapter implements DomainRentCarOrderRepositoryPort {
     RentCarOrderDboMapper rentCarOrderMapper;
 
     @Override
-    public DomainRentCarOrderClientModel findRentCarOrder(String rentcarId) {
+    public DomainRentCarOrderDetailModel findRentCarOrder(String rentcarId) {
         log.debug("findClientByDni()");
         return rentCarOrderMapper.toDomainInfo(rentCarOrderRepository.findRentCarOrder(rentcarId));
     }

@@ -24,7 +24,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-13T09:45:32.834281+01:00[Europe/Madrid]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-14T07:50:01.475022+01:00[Europe/Madrid]")
 @Validated
 @Api(value = "rentcar", description = "the rentcar API")
 public interface RentcarApi {
@@ -128,7 +128,7 @@ public interface RentcarApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"end_date\" : \"end_date\", \"client_dni\" : \"client_dni\", \"car_plate\" : \"car_plate\", \"car_detail\" : \"car_detail\", \"id\" : 0, \"client_fullname\" : \"client_fullname\", \"start_date\" : \"start_date\", \"return_date\" : \"return_date\" }";
+                    String exampleString = "{ \"end_date\" : \"end_date\", \"client_dni\" : \"client_dni\", \"car_plate\" : \"car_plate\", \"price\" : 6, \"car_detail\" : \"car_detail\", \"id\" : 0, \"client_fullname\" : \"client_fullname\", \"start_date\" : \"start_date\", \"return_date\" : \"return_date\", \"status\" : \"status\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

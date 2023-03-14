@@ -29,10 +29,10 @@ public class DomainRentCarServicePortImpl implements DomainRentCarServicePort {
     private final DomainPriceItemsRepositoryPort domainPriceItemsRepositoryPort;
 
     @Override
-    public DomainRentCarOrderClientModel findRentCarOrder(String rentcarId) {
-        DomainRentCarOrderClientModel domainRentCarOrderInfoModel = domainRentCarOrderRepositoryPort.findRentCarOrder(rentcarId);
-        if (domainRentCarOrderInfoModel != null) {
-            return domainRentCarOrderInfoModel;
+    public DomainRentCarOrderDetailModel findRentCarOrder(String rentcarId) {
+        DomainRentCarOrderDetailModel domainRentCarOrderDetailModel = domainRentCarOrderRepositoryPort.findRentCarOrder(rentcarId);
+        if (domainRentCarOrderDetailModel != null) {
+            return domainRentCarOrderDetailModel;
         } else {
             throw new DomainNotFoundException(DomainMessages.KEY_NOT_FOUND);
         }
