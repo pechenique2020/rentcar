@@ -16,7 +16,7 @@ import javax.validation.constraints.*;
 /**
  * ApiClientDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-14T07:50:01.475022+01:00[Europe/Madrid]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-03-19T09:44:23.978183+01:00[Europe/Madrid]")
 public class ApiClientDto   {
   @JsonProperty("id")
   private Long id;
