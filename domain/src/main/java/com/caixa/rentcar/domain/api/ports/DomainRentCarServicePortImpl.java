@@ -22,6 +22,7 @@ import static java.time.LocalDateTime.now;
 public class DomainRentCarServicePortImpl implements DomainRentCarServicePort {
 
     private final DomainRentCarOrderRepositoryPort domainRentCarOrderRepositoryPort;
+    private final DomainRentCarOrderDetailRepositoryPort domainRentCarOrderDetailRepositoryPort;
     private final DomainClientBonusRepositoryPort domainClientBonusRepositoryPort;
     private final DomainClientRepositoryPort domainClientRepositoryPort;
     private final DomainCarRepositoryPort domainCarRepositoryPort;
@@ -30,7 +31,7 @@ public class DomainRentCarServicePortImpl implements DomainRentCarServicePort {
 
     @Override
     public DomainRentCarOrderDetailModel findRentCarOrder(String rentcarId) {
-        DomainRentCarOrderDetailModel domainRentCarOrderDetailModel = domainRentCarOrderRepositoryPort.findRentCarOrder(rentcarId);
+        DomainRentCarOrderDetailModel domainRentCarOrderDetailModel = domainRentCarOrderDetailRepositoryPort.findRentCarOrder(rentcarId);
         if (domainRentCarOrderDetailModel != null) {
             return domainRentCarOrderDetailModel;
         } else {

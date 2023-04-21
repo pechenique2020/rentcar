@@ -16,8 +16,6 @@ public class RentCarOrderClientEntity {
     private Long id;
     @Column(name = "car_plate")
     private String carPlate;
-    //@Column(name = "car_detail")
-    //private String carDetail;
     @Column(name = "start_date")
     private Date startDate;
     @Column(name = "end_date")

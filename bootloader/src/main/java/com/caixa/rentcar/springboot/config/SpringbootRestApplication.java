@@ -28,8 +28,8 @@ public class SpringbootRestApplication
         return new DomainCarServicePortImpl(domainCarRepositoryPort);
     }
     @Bean
-    DomainRentCarServicePort getDomainRentCarServicePort(final DomainRentCarOrderRepositoryPort domainRentCarOrderRepositoryPort,final DomainClientBonusRepositoryPort domainClientBonusRepositoryPort, final DomainClientRepositoryPort domainClientRepositoryPort, final DomainCarRepositoryPort domainCarRepositoryPort,final DomainPricesRepositoryPort domainPricesRepositoryPort, final DomainPriceItemsRepositoryPort domainPriceItemsRepositoryPort ){
-        return new DomainRentCarServicePortImpl(domainRentCarOrderRepositoryPort,domainClientBonusRepositoryPort,domainClientRepositoryPort,domainCarRepositoryPort,domainPricesRepositoryPort,domainPriceItemsRepositoryPort);
+    DomainRentCarServicePort getDomainRentCarServicePort(final DomainRentCarOrderRepositoryPort domainRentCarOrderRepositoryPort, final DomainRentCarOrderDetailRepositoryPort domainRentCarOrderDetailRepositoryPort,final DomainClientBonusRepositoryPort domainClientBonusRepositoryPort, final DomainClientRepositoryPort domainClientRepositoryPort, final DomainCarRepositoryPort domainCarRepositoryPort,final DomainPricesRepositoryPort domainPricesRepositoryPort, final DomainPriceItemsRepositoryPort domainPriceItemsRepositoryPort ){
+        return new DomainRentCarServicePortImpl(domainRentCarOrderRepositoryPort,domainRentCarOrderDetailRepositoryPort,domainClientBonusRepositoryPort,domainClientRepositoryPort,domainCarRepositoryPort,domainPricesRepositoryPort,domainPriceItemsRepositoryPort);
     }
 
 }

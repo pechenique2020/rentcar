@@ -17,7 +17,7 @@ public class DomainMessages {
     public static final String UNKNOWN_CLIENT_TEXT ="Los siguientes dni no se encuentra registrados: ";
     public static final String RENTCAR_ORDER_NOT_FOUND ="El coche no se encuentra en una orden abierta: ";
     public static final String DATES_DIFF_KO ="La fechas indicadas no es posible culminar la operación: ";
-    public static final String NEW_RENTAR_ORDER ="OPENNED";
+    public static final String NEW_RENTAR_ORDER ="OPENED";
     public static final String CLOSE_RENTCAR_ORDER ="CLOSED";
 
 }
